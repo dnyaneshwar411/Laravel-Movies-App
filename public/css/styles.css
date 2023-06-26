@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #1a202b;
+}
+
+hr {
+    height: 1px;
+    border-color: rgba(255, 255, 255, 0.15);
+    margin-top: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+i {
+    cursor: pointer;
+}
+
+.paddingSection {
+    color: rgba(255, 255, 255, 0.90);
+    background-color: #1a202b;
+    padding: 3rem 8rem;
+}
+
+h1 {
+    font-size: 2.3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #be8136;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+}
+
+h5:hover {
+    color: orange;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    width: 100vw;
+}
+
+nav {
+    width: 100vw;
+    color: white;
+    background-color: #1a202b;
+    padding: 1.3rem 8rem;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    gap: 2rem;
+}
+
+nav div:nth-child(2) li {
+    position: relative;
+}
+
+nav ul li .fa-magnifying-glass {
+    position: absolute;
+    top: 50%;
+    transform: translate(100%, -50%);
+}
+
+nav ul li .fa-bars {
+    cursor: pointer;
+    display: none;
+}
+
+nav ul li img {
+    margin-top: 2px;
+    width: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+nav input {
+    width: 18rem;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    height: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+nav input::placeholder {
+    text-align: center;
+    color: white;
+}
+
+nav input:focus {
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+nav #searchResults li {
+    gap: 0.5rem;
+}
+
+nav #searchResults li img {
+    height: 5rem;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+/* popMovies, nowPlaying */
+#popMovies .flex .card,
+#popActors .flex .card,
+#nowPlaying .flex .card,
+#moviePost .flex .card {
+
+    position: relative;
+}
+
+#popMovies .flex,
+#popActors .flex,
+#nowPlaying .flex,
+#moviePost .flex {
+    margin-top: 2.5rem;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#popMovies .card,
+#popActors .card,
+#nowPlaying .card,
+#cast .card {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.90);
+    height: 22rem;
+    width: 12rem;
+    margin-top: 2rem;
+    /* overflow-x: hidden; */
+}
+
+#popMovies .card i,
+#popActors .card i,
+#nowPlaying .card i {
+    color: #be8136;
+}
+
+#popMovies .card img,
+#popActors .card img,
+#nowPlaying .card img {
+    width: 11.5rem;
+    height: 17rem;
+    object-fit: contain;
+    object-position: center;
+    transition: all .25s ease;
+}
+
+/* moviePost */
+#moviePost img {
+    margin-inline: auto;
+    height: 30rem;
+    width: 22rem;
+    object-fit: contain;
+    transition: all .25s ease;
+}
+
+#moviePost .flex #movieInfo {
+    min-width: 22rem;
+    max-width: 50rem;
+    margin-top: 0;
+    align-self: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+#moviePost .flex #movieInfo button {
+    background-color: #be8136;
+    padding: 0.9rem 1.3rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#moviePost #movieInfo .rating-date i {
+    color: #be8136;
+}
+
+/* Cast */
+#cast,
+#imagesMovie {
+    margin: 3rem 0;
+}
+
+#cast h2,
+#imagesMovie h2 {
+    color: white;
+}
+
+#cast .flex {
+    justify-content: flex-start;
+}
+
+#cast img {
+    height: 17rem;
+    width: 12rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+#cast a:hover {
+    color: orange;
+}
+
+#cast .flex .castActor {
+    word-wrap: break-word;
+    overflow-x: hidden;
+}
+
+#cast .flex .castActor h3 {
+    word-wrap: break-word;
+    width: 100%;
+}
+
+#imagesMovie .flex img {
+    height: 14rem;
+    width: 23rem;
+}
+
+/* MovieInfo */
+#movieInfo h1 {
+    color: #be8136;
+}
+
+/* searchDropDown */
+#searchDropDown ul {
+    position: absolute;
+    top: 2.5rem;
+    text-align: left;
+    font-weight: lighter;
+    width: 100%;
+    list-style-type: none;
+    color: black;
+    padding-inline: 0.3rem 0.3rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: 3;
+    backdrop-filter: blur(15px);
+}
+
+#searchDropDown ul li {
+    padding-block: 0.3rem;
+}
+
+#imgModel,
+#vidModel {
+    background-color: #1a202b;
+    border: 2px solid #be8136;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    backdrop-filter: blur(100px);
+    /* box-shadow: 0 0 100000000px 10000px rgb(255, 255, 255, 0.5); */
+}
+
+#imgModel .flex,
+#vidModel .flex {
+    font-size: 2rem;
+    margin: 1rem 2rem 1rem 0;
+    justify-content: end;
+}
+
+#imgModel img,
+#vidModel img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#iframes {
+    padding-bottom: 56.25%;
+    position: relative;
+    display: block;
+    width: 100%
+}
+
+.actorMovies a {
+    text-decoration: underline;
+}
+
+.actorMovies a:hover {
+    color: orange;
+}
+
+.desc a {
+    color: orange;
+    text-decoration: underline;
+}
+
+.desc a:hover {
+    color: blue;
+}
+
+.tvshow .flex .tvshowImg img {
+    height: 14rem;
+    width: 23rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* media queries */
+@media (max-width:1000px) {
+    nav {
+        padding-inline: 1.5rem;
+    }
+
+    nav input {
+        width: 5rem;
+    }
+
+    .paddingSection {
+        padding-inline: 1.5rem;
+    }
+
+    header {
+        position: relative;
+    }
+
+    nav #navigation {
+        background-color: #1a202b;
+        width: 15rem;
+        height: 100%;
+        flex-direction: column;
+        position: fixed;
+        right: -15rem;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: all 0.2s;
+    }
+
+    nav .right {
+        right: 0 !important;
+        z-index: 5;
+    }
+
+    nav #navigation li {
+        font-size: 2rem;
+    }
+
+    nav ul li .fa-bars {
+        display: block;
+        position: relative;
+        z-index: 5;
+    }
+
+    nav #searchResults li img {
+        height: 2rem;
+    }
+}
